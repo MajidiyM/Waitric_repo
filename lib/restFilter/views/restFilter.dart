@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:waitric/homePage/views/homePage.dart';
+
+import '../widgets/widget.dart';
 
 class RestFilter extends StatefulWidget {
   const RestFilter({super.key});
@@ -9,13 +10,20 @@ class RestFilter extends StatefulWidget {
 }
 
 class _RestFilterState extends State<RestFilter> {
+  GlobalKey<ScaffoldState>? _key;
   @override
+  void initState() {
+    super.initState();
+    _key = GlobalKey<ScaffoldState>();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
             PageTitle(),
+            WrapWidgetDemo(),
           ],
         ),
       ),
@@ -30,20 +38,26 @@ Widget PageTitle() => ListTile(
           fontSize: 24.0,
         ),
       ),
-      leading: IconButton(
-        onPressed: () => null,
-        icon: Icon(Icons.arrow_back),
-      ),
+      leading: Builder(builder: (context) {
+        return IconButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed("homePage");
+          },
+          icon: Icon(Icons.arrow_back),
+        );
+      }),
       subtitle: Text(
         "Укажите параметры фильтра",
         style: TextStyle(color: Colors.grey[600], fontSize: 16.0),
       ),
-      trailing: IconButton(
-        onPressed: () => null,
-        icon: Icon(
-          Icons.done,
-          size: 30.0,
-          color: Colors.red,
-        ),
-      ),
+      trailing: Builder(builder: (context) {
+        return IconButton(
+          onPressed: () => Navigator.of(context).pushNamed("homePage"),
+          icon: Icon(
+            Icons.done,
+            size: 30.0,
+            color: Colors.red,
+          ),
+        );
+      }),
     );
