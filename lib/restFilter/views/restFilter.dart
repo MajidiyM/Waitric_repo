@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/widget.dart';
 
 class RestFilter extends StatefulWidget {
@@ -24,6 +23,9 @@ class _RestFilterState extends State<RestFilter> {
           children: [
             PageTitle(),
             WrapWidgetDemo(),
+            SizedBox(
+              height: 50.0,
+            ),
           ],
         ),
       ),
