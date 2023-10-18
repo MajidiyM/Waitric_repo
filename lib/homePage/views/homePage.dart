@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:waitric/restFilter/views/view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -67,7 +68,7 @@ class _SearchBarState extends State<SearchBar> {
             hintText: "Поиск",
             suffixIcon: IconButton(
               icon: Icon(Icons.filter_list),
-              onPressed: () => Navigator.of(context).pushNamed(),
+              onPressed: () => Navigator.of(context).pushNamed('restFilter'),
             ),
             prefixIcon: IconButton(
               icon: Icon(Icons.search),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:waitric/homePage/views/view.dart';
-import 'package:waitric/routes.dart';
-import 'package:waitric/theme.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
