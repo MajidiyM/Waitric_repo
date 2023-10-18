@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             PageTitle(),
+            SearchBar(),
           ],
         ),
       ),
@@ -47,4 +48,32 @@ class PageTitle extends StatelessWidget {
   }
 }
 
+class SearchBar extends StatefulWidget {
+  const SearchBar({super.key});
 
+  @override
+  State<SearchBar> createState() => _SearchBarState();
+}
+
+class _SearchBarState extends State<SearchBar> {
+  final TextEditingController _searchController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+      child: TextField(
+        controller: _searchController,
+        decoration: InputDecoration(
+            hintText: "Поиск",
+            suffixIcon: IconButton(
+              icon: Icon(Icons.filter_list),
+              onPressed: () => Navigator.of(context).pushNamed(),
+            ),
+            prefixIcon: IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () => null,
+            )),
+      ),
+    );
+  }
+}
