@@ -23,9 +23,6 @@ class _RestFilterState extends State<RestFilter> {
           children: [
             PageTitle(),
             WrapWidgetDemo(),
-            SizedBox(
-              height: 50.0,
-            ),
           ],
         ),
       ),

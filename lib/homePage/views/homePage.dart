@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:waitric/restFilter/views/view.dart';
+import 'package:waitric/widgets.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,6 +22,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomBar(),
     );
   }
 }
