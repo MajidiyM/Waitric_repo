@@ -11,6 +11,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<String> _restNames = [
+    'Hot-Doggie',
+    'Pizza Place',
+    'Burger Joint',
+    'Sushi Bar',
+    'Ice Cream Parlor',
+  ];
+
+  final List<String> _restAddress = [
+    '4140 Parker Rd. Allentown, New Mexico 31134',
+    '123 Main St. Cityville, State 12345',
+    '456 Oak St. Burgertown, State 67890',
+    '789 Pine St. Sushiville, State 12345',
+    '321 Maple St. Icesville, State 67890',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +35,15 @@ class _HomePageState extends State<HomePage> {
           children: [
             PageTitle(),
             SearchBar(),
-            RestBox(),
+            Expanded(
+              child: ListView.builder(
+                itemCount: _restNames.length,
+                itemBuilder: (context, index) => RestBox(
+                  restName: _restNames[index],
+                  restAddress: _restAddress[index],
+                ),
+              ),
+            ),
           ],
         ),
       ),
